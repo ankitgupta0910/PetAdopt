@@ -1,0 +1,107 @@
+<script>
+var app = angular.module('statusApp', []);
+app.controller('statusController', function ($scope,$http,$window) {
+	$http({
+    	  method: 'GET',
+    	 url: '/set',
+    	 
+      }).
+        then(function(response) {
+      	  $scope.name=response.data.name;
+      	  $scope.email=response.data.email;
+      	
+        }); 
+	
+	
+	
+	$scope.search = function (){
+		var toSearch={
+				name:$scope.search_bar
+		}
+		tname=angular.toJson(toSearch);
+		$scope.selection=[];
+		$http({
+	      	  method: 'POST',
+	      	 url: '/search',
+	      	 data: tname
+	        }).
+	          then(function(response) {
+	        	  angular.forEach(response.data,function(user){
+	        	  
+	        	  $scope.selection.push({firstname:user.firstname,lastname:user.lastname,useremail:user.useremail});
+	        	  
+	        	  });
+	          }); 
+	}
+	 $scope.profile=function (useremail){
+		 
+		 var email={email:useremail}
+		 var pname=angular.toJson(email);
+		$http({
+	      	  method: 'POST',
+	      	 url: '/profile',
+	      	 data: pname
+	        }).
+	          then(function(response) {
+	        	  $window.location.href = '/profile';
+	        	
+	          }); 
+		
+		 
+	 }
+	
+});
+
+-------------------------------
+<div  class="container" id="app1" ng-controller="statusController">
+    <div class="row">
+
+        <div class="col-sm-3">
+            <div class="logo">MyFacebook</div>
+        </div>
+        <div class="col-md-9 hidden-xs">
+            <div class="row">
+            <form class="form-group" action="" method="get" >
+                <div class="col-sm-5">
+                
+                <div class="dropdown">
+                
+                    <input type="text" ng-model="search_bar" ng-change="search()" name="search_bar" role="combobox" id="search_bar" class="dropdown-toggle form-control search-bar" data-toggle="dropdown" placeholder="Search MyFacebook" aria-haspopup="true" aria-expanded="true" autocomplete='off'>
+                    
+                     <ul class="dropdown-menu" >
+                   
+                    <li ng-repeat="name in selection"><a role="button"  ng-model="selected" href="" ng-click="profile(name.useremail)" ><span>{{name.firstname+'  '}}</span><span >{{name.lastname}}</span></a></li>
+       						
+				     </ul>
+				   
+				     </div>
+				     
+                   </div>  
+                <div class="col-sm-1">
+             
+                       <a class="btn link-btn" ng-click="profile(email)" href="" role="button"><span>{{name}}</span></a>
+                    
+                </div>
+                
+                 <div class="col-sm-1">
+                     
+                       <a class="btn link-btn" href="/" role="button">Home</a>
+                     
+                </div>
+                <div class="col-sm-1">
+                     
+                        <a class="btn link-btn" href="/groups" role="button">Groups</a>
+                     
+                </div>
+                <div class="col-sm-1">
+                     
+                        <button type="submit" formaction="/logout" value="logout" class="btn  btn-primary btn-header-login login-btn">Log Out</button>
+                     
+                </div>
+      
+                 </form> 
+            </div> 
+           
+        </div>
+    </div>
+    </div>
