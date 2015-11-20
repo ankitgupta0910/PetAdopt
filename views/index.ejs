@@ -1048,8 +1048,15 @@ padding: 0 0 0 0;
 			      	 data: {"ad_email":ad_email,"ad_password":ad_password,"ad_fname":ad_fname,"ad_lname":ad_lname,"ad_contact":ad_contact,"ad_address":ad_address}
 			        }).
 			          then(function(response) {
-			        	  alert("Signup Successful! Please Login!")
-			        	  $window.location.href = '/';
+			        	  if (response.data.status===200)
+			        		  {
+				        	  alert("Signup Successful! Please Login!")
+				        	  $window.location.href = '/';			        		  
+			        		  }
+			        	  else
+			        		  {
+			        		  alert("User already exist")
+			        		  }
 			          }); 
 			}
 			

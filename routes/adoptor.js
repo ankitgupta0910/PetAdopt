@@ -11,7 +11,7 @@ exports.ad_signup = function(req, res){
 //		{
 //			res.render('')
 //		}
-		var myquery = "insert into Adoptor values ('"+ad_email+"','"+ad_password+"','"+ad_fname+"','"+ad_lname+"','"+ad_contact+"','"+ad_address+"','AD')";
+		var myquery = "select * from Adoptor where ad_emailid = '"+ad_email+"'";
 		mysql.fetchData(function(err,results){
 			if(err)
 				{
@@ -19,11 +19,29 @@ exports.ad_signup = function(req, res){
 				}
 			else
 				{
-				res.render('success');
-				}
-			
+				if (results.length>0)
+					{
+					res.send({"status":150});
+					}
+				else
+					{
+					var myquery = "insert into Adoptor values ('"+ad_email+"','"+ad_password+"','"+ad_fname+"','"+ad_lname+"','"+ad_contact+"','"+ad_address+"','AD')";
+					mysql.fetchData(function(err,results){
+					if(err)
+						{
+							throw err;
+						}
+					else
+						{
+							res.send({"status":200});
+						}
+					},myquery);
+					}}
 		},myquery);
+		
+		
 	};
+	
 exports.checkLogin = function(req,res){
 	console.log("checking session");
 	if(req.session.type){
