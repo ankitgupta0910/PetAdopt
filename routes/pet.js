@@ -27,7 +27,7 @@ exports.petinsert = function(req,res){
 	if(req.files.pt_file.size != 0)
 		{
 	    var tmp_path = req.files.pt_file.path;
-	    var target_path = '/Users/ankitgupta/Documents/workspace/hello/public/images/' + Date.now() + req.files.pt_file.name;
+	    var target_path = '/Users/ankitgupta/Documents/workspace/PetAdopt/public/images/' + Date.now() + req.files.pt_file.name;
 	    var profile_pic = Date.now() + req.files.pt_file.name;
 	    fs.rename(tmp_path, target_path, function(err) {
 	        if (err) throw err;
