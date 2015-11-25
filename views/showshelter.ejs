@@ -358,201 +358,166 @@ padding: 0 0 0 0;
   </style>
   </head>
   
-  <body >
-  	<div  ng-app="PetAdopt"  data-ng-controller="shelterpetCtrl">
-<div class="container-fluid">
+<body>
+	<div  ng-app="PetAdopt"  data-ng-controller="shelterctrl">
+		<div class="container-fluid">
   		<!--/////////////////////////////////////HEADER///////////////////////////////////////////-->
-		      <div class="header">
-        	  <ul class="list-header">
-                <li class="tagline">Search Pets. Adopt Pets. Save Pets.</li>
+			<div class="header">
+				<ul class="list-header">
+					<li class="tagline">Search Pets. Adopt Pets. Save Pets.</li>
                 </ul>
-              
-              
-    
-    <div class="row">
 
-        <!-- <div class="col-md-4"> -->
-            <h1>Pet Adopt</h1>
-        <!-- </div> -->
-        <div class="col-md-6">
-            <div class="row">
-		
-		            <ul class="nav">
-                <li><a  href="#">ABOUT</a>
-				</li>
-
-                <li><a  href="http://www.24petwatch.com/">PROTECT</a>
-                		<ul>
-                            <li><a href="http://www.24petwatch.com/">Pet Insurance</a></li>
-                            <li><a href="#">Lost Pet Recovery Services </a></li>
-						</ul>
-				</li>
-                <li><a  href="#">BLOG</a>
-                		<ul>
-                        	<li><a href="#">Health, Behavior, and Other Tips</a></li>
-						</ul>
-				</li>
-				
-				<li><a  href="#">LOOK</a>
-				</li>
-				
-                <li><a  href="#"><span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span></a>
-                		<ul>
-                			<li><a role="button"  ng-model="selected" href="" ng-click="ownpet()">Own Pets</a></li>
-                        	<li><a role="button"  ng-model="selected" href="" ng-click="newreq()">New Requests</a></li>
-                        	<li><a role="button"  ng-model="selected" href="" ng-click="logout()">Logout</a></li>
-						</ul>
-				</li>     
+				<div class="row">
+					<h1>Pet Adopt</h1>
+					<div class="col-md-6">
+						<div class="row">
+							<ul class="nav">
+                				<li><a  href="#">ABOUT</a></li>
+				                <li><a  href="#">PROTECT</a>
+                					<ul>
+                            			<li><a href="#">Pet Insurance</a></li>
+                            			<li><a href="#">Lost Pet Recovery Services </a></li>
+									</ul>
+								</li>
+				                <li><a  href="#">BLOG</a>
+                					<ul>
+                        				<li><a href="#">Health, Behavior, and Other Tips</a></li>
+									</ul>
+								</li>
+								<li><a  href="#">LOOK</a></li>
+					            <li><a  href="#"><span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span></a>
+                					<ul>
+                						<li><a role="button"  ng-model="selected" href="" ng-click="ownpet()">Own Pets</a></li>
+                        				<li><a role="button"  ng-model="selected" href="" ng-click="newreq()">New Requests</a></li>
+                        				<li><a role="button"  ng-model="selected" href="" ng-click="logout()">Logout</a></li>
+									</ul>
+								</li>     
 				           
-            </ul>
-		
-            </div> 
-           
-        </div>
-    </div>
-    
-            
+            				</ul>
+            			</div> 
+			        </div>
+   			 	</div>
         </div><!--end header-->
-
 <!--/////////////////////////////////////HEADER///////////////////////////////////////////-->
 
 <div class="row" style="background:#70D2EB;"><div class="col-md-1"></div></div>
 <div class="row mainpage">
-
-<div class="row col-md-12 search" ng-show=true>
-			  	<br>
-			  	</div>
-			  	<div class="col-md-1"></div>
+	<div class="row col-md-12 search" ng-show=true><br></div>
+	<div class="col-md-1"></div>
 			  	
-<div class="col-md-7 container" style="background:#ffffff;">
-   	<div class="" ng-show="ownpet1">
-    <br>
-    <div class="row">
-  <div class="col-sm-6 col-md-4" ng-repeat="id1 in details">
-    <div class="thumbnail">
-    
-    <div id="mycarousel" class="carousel slide" data-ride="carousel">
-    <div class="carousel-inner">
-        <div class="item active">
-              <img width="156px" height="70px" src="/images/{{id1.p_image_name}}" style="margin: 0 0 0 28px"/>
-           <div style="color:black;font-size: 31px;" class="carousel-caption" ng-hide={{id1.p_status}}>
-           Adopted!
-           </div>
-        </div>
-    </div>
-</div>
-    
-    
-<!--       <a role="button"  ng-model="selected" href="" ng-click="moredet(id1)"><img width="156px" height="70px" src="/images/{{id1.p_image_name}}"/></a> -->
-      <div class="caption">
-        <h3 class="text-center">{{id1.p_name}}</h3>
-        <p class="text-center">{{id1.p_breed}}</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-    </div>
+	<div class="col-md-7 container" style="background:#ffffff;">
+   		<div class="" ng-show="ownpet1">
+    		<br>
+    		<div class="row">
+  				<div class="col-sm-6 col-md-4" ng-repeat="id1 in details">
+    				<div class="thumbnail">
+					    <div id="mycarousel" class="carousel slide" data-ride="carousel">
+    						<div class="carousel-inner">
+        						<div class="item active">
+              						<img width="156px" height="70px" src="/images/{{id1.p_image_name}}" style="margin: 0 0 0 28px"/>
+           							<div style="color:black;font-size: 31px;" class="carousel-caption" ng-hide={{id1.p_status}}>
+           							Adopted!
+           							</div>
+        						</div>
+    						</div>
+						</div>
+      					<div class="caption">
+        					<h3 class="text-center">{{id1.p_name}}</h3>
+        					<p class="text-center">{{id1.p_breed}}</p>
+      					</div>
+    				</div>
+  				</div>
+			</div>
+		</div>
         	
+   		<div class="" ng-show="newreq1">
+    		<br>
+    		<div class="row">
+  				<div class="col-sm-6 col-md-4" ng-repeat="id1 in details1">
+    				<div class="thumbnail"> 
+					    <div id="mycarousel" class="carousel slide" data-ride="carousel">
+    						<div class="carousel-inner">
+        						<div class="item active"> 
+              						<a role="button"  ng-model="selected" href="" ng-click="moredet(id1)"><img width="156px" height="70px" src="/images/{{id1.p_image_name}}"/>
+              							<div style="color:red;font-size: 15px;" class="carousel-caption" ng-show={{id1.sl_notified}}>
+           									Meeting Scheduled!
+           								</div>
+              						</a>	
+        						</div>
+    						</div>
+						</div>
+						<div class="caption">
+							<h3 class="text-center">{{id1.p_name}}</h3>
+						    <p class="text-center">{{id1.ad_fname}} {{id1.ad_lname}}</p>
+						    <p class="text-center">wants to adopt this.</p>
+						</div>
+    				</div>
+			  	</div>
+			</div>
+    	</div>
         	
-   	<div class="" ng-show="newreq1">
-    <br>
-    <div class="row">
-  <div class="col-sm-6 col-md-4" ng-repeat="id1 in details1">
-    <div class="thumbnail">
-    
-    <div id="mycarousel" class="carousel slide" data-ride="carousel">
-    <div class="carousel-inner">
-        <div class="item active"> 
-              <a role="button"  ng-model="selected" href="" ng-click="moredet(id1)"><img width="156px" height="70px" src="/images/{{id1.p_image_name}}"/>
-              <div style="color:red;font-size: 15px;" class="carousel-caption" ng-show={{id1.sl_notified}}>
-           Meeting Scheduled!
-           </div>
-              </a>
-        	
-        </div>
-    </div>
-</div>
-  <div class="caption">
-        <h3 class="text-center">{{id1.p_name}}</h3>
-        <p class="text-center">{{id1.ad_fname}} {{id1.ad_lname}}</p>
-      	<p class="text-center">wants to adopt this.</p>
-      </div>
-      
-      
-
-
-      
-    </div>
-  </div>
-</div>
-
-    </div>
-        	
-      <div class="" ng-show="moredetshow">
+  		<div class="" ng-show="moredetshow">
         	<br>
         	<div ng-repeat="id2 in details2">
-        	<div class="row">
-        	<div class="media col-md-5">
-			  <div class="media-left">
-			      <img class="media-object" style="border: solid #70D2EB  1px; height:200px;" src="/images/{{id2.p_image_name}}" alt="...">
-			  </div>
-			</div>
-        	<div class="row">
-        	<div class="col-md-3">
-	        	<label>   PET   </label><br>
-        		<label>Name: {{id2.p_name}}</label><br>
-        		<label>Breed: {{id2.p_breed}}</label><br>
-        		<label>Gender: {{id2.p_gender}}</label><br>
-        		<label>Height: {{id2.p_height}} cms</label><br>
-        		<label>Weight: {{id2.p_weight}} lbs</label><br><br>
-        		<form>
-        		<input type="submit" class="btn btn-primry login-btn" value="Adopt" ng-click="interest(id1)" ng-show="adwelcome">
-        		</form>
-			</div>
+        		<div class="row">
+        			<div class="media col-md-5">
+			  			<div class="media-left">
+			      			<img class="media-object" style="border: solid #70D2EB  1px; height:200px;" src="/images/{{id2.p_image_name}}" alt="...">
+			  			</div>
+					</div>
+        			<div class="row">
+        				<div class="col-md-3">
+	        				<label>   PET   </label><br>
+        					<label>Name: {{id2.p_name}}</label><br>
+        					<label>Breed: {{id2.p_breed}}</label><br>
+        					<label>Gender: {{id2.p_gender}}</label><br>
+        					<label>Height: {{id2.p_height}} cms</label><br>
+        					<label>Weight: {{id2.p_weight}} lbs</label><br><br>
+						</div>
 			
-			<div class="col-md-3">
-				<label>   ADOPTOR   </label><br>
-        		<label>Name: {{id2.ad_fname}} {{id2.ad_lname}}</label><br>
-        		<label>Contact: {{id2.ad_contact}}</label><br>
-        		<label>Address: {{id2.ad_address}}</label><br>
-        		<form>
-        		<input type="submit" class="btn btn-primry login-btn" value="Adopt" ng-click="interest(id1)" ng-show="adwelcome">
-        		</form>
-			</div>
-
-			
-		     <button ng-click="toggleModal('Cancel')" class="btn btn-default">Schedule Meeting</button>
-			  <modal visible="showModal">
-			  		<form name="meet_form" ng-model="meet_form" enctype="multipart/form-data" class="form-horizontal" novalidate style="padding:0 0 0 50px">
-     				
-     				<div class="form-group">				
-		 				<input type="date" name="mt_date" ng-model="mt_date" class="login-text" style="width:250px;margin:0 0 0 120px;" required><br>					
-		           	</div>
-			  
-			  		<div class="form-group">				
-		 				<input type="time" name="mt_time" ng-model="mt_time" class="login-text" style="width:250px;margin:0 0 0 120px;" required><br>			
-		           	</div>
-					<div class="row">
-						<input type="text" ng-model="mt_ad_fname" name="mt_ad_fname" value={{id2.ad_fname}} ng-hide="true">
-						<input type="text" ng-model="mt_ad_emailid" name="mt_ad_emailid" value={{id2.ad_emailid}} ng-hide="true">
-						<input type="text" ng-model="mt_sh_emailid" name="mt_sh_emailid" value={{id2.sh_emailid}} ng-hide="true">
-           				<input type="submit" value="Send Mail" ng-click="sendmail(mt_date,mt_time,id2)" class="btn btn-primary login-btn" style="width:250px;margin:0 0 0 120px;" name="Submit">
-         			</div>
-			      </form>
-			 </modal>
-			</div>
+						<div class="col-md-3">
+							<label>   ADOPTOR   </label><br>
+			        		<label>Name: {{id2.ad_fname}} {{id2.ad_lname}}</label><br>
+			        		<label>Contact: {{id2.ad_contact}}</label><br>
+			        		<label>Address: {{id2.ad_address}}</label><br>
+			        		<form name="decision" ng-model="decision" novalidate>
+        						<input type="text" name="accept" ng-model="accept" ng-init="accept='false'" ng-hide="true">
+								<input type="submit" ng-click="dec(accept,id2)"  value="Adopted" class="btn btn-default btn-primary" style="width:100%">
+							</form>
+						</div>
+						<div class="col-md-6">
+						<form name="decision" ng-model="decision" novalidate>
+		     				<button ng-click="toggleModal('Cancel')" class="btn btn-default btn-success" style="width:48%">Schedule Meeting</button>
+		     				
+        						<!-- <input type="text" name="reject" ng-model="reject" ng-init="reject='true'" ng-hide="true">
+								<input type="submit" ng-click="dec(reject)"  value="Reject" class="btn btn-default btn-danger" style="width:48%"> -->
+							</form>
+			  			</div>
+						  <modal visible="showModal">
+						  		<form name="meet_form" ng-model="meet_form" enctype="multipart/form-data" class="form-horizontal" novalidate style="padding:0 0 0 50px">
+			     				
+			     				<div class="form-group">				
+					 				<input type="date" name="mt_date" ng-model="mt_date" class="login-text" style="width:250px;margin:0 0 0 120px;" required><br>					
+					           	</div>
+						  
+						  		<div class="form-group">				
+					 				<input type="time" name="mt_time" ng-model="mt_time" class="login-text" style="width:250px;margin:0 0 0 120px;" required><br>			
+					           	</div>
+								<div class="row">
+									<input type="text" ng-model="mt_ad_fname" name="mt_ad_fname" value={{id2.ad_fname}} ng-hide="true">
+									<input type="text" ng-model="mt_ad_emailid" name="mt_ad_emailid" value={{id2.ad_emailid}} ng-hide="true">
+									<input type="text" ng-model="mt_sh_emailid" name="mt_sh_emailid" value={{id2.sh_emailid}} ng-hide="true">
+			           				<input type="submit" value="Send Mail" ng-click="sendmail(mt_date,mt_time,id2)" class="btn btn-primary login-btn" style="width:250px;margin:0 0 0 120px;" name="Submit">
+			         			</div>
+						      </form>
+						 </modal>
+					</div>
 				</div>
 				<div class="row">
-        		<label style="padding:0 0 0 5px"><br>{{id2.p_description}}</label><br>
+        			<label style="padding:0 0 0 5px"><br>{{id2.p_description}}</label><br>
         		</div>
-        	
         	</div>
-        	
-        	</div>
-      
-      
-        	
+        </div>    	
 </div>
 <!-- -#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#--#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#--#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#--#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#- -->
 <!-- -#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#--#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#--#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#--#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#- -->
@@ -729,7 +694,7 @@ padding: 0 0 0 0;
 var app = angular.module('PetAdopt', []);
 
 		
-		app.controller('shelterpetCtrl', function ($scope,$http,$window,$filter) 
+		app.controller('shelterctrl', function ($scope,$http,$window,$filter) 
 	{
 			
 			$scope.ptinsrt = true;
@@ -806,6 +771,10 @@ var app = angular.module('PetAdopt', []);
  		   					$scope.moredetshow = false;
  		   					$scope.newreq1 = true; 		
  							}
+		        	  	else
+		        	  		{
+		        	  		alert("There are no new requests as of now.")
+		        	  		}
 						       	  	
 		        	 });
 			};
@@ -868,10 +837,11 @@ var app = angular.module('PetAdopt', []);
  				var adfn = id2["ad_fname"];
 				var adml = id2["ad_emailid"];
 				var shml = id2["sh_emailid"];
+				var pid = id2["p_id"];
  	  		 	$http({
 			      	  method: 'POST',
 			      	  url: '/sendmail',
-			      	  data: {"date":dt,"time":tm,"adfnm":adfn,"admld":adml,"shmld":shml}
+			      	  data: {"date":dt,"time":tm,"adfnm":adfn,"admld":adml,"shmld":shml,"pid":pid}
 			        }).
 			          then(function(response) {
 			        	  	alert("Meeting has been scheduled.");
@@ -901,6 +871,25 @@ var app = angular.module('PetAdopt', []);
 							}
 								
 			          }); 
+			};
+
+			$scope.dec = function (ac,id2){
+			alert(ac);
+			var pid = id2["p_id"];
+			var adml = id2["ad_emailid"];
+ 	  			$http({
+			      	  method: 'POST',
+			      	  url: '/decide',
+			      	  data: {"ac":ac,"pid":pid,"adml":adml}
+			        }).
+			          then(function(response) {
+			        	  if (response.data.status == 200)
+							{
+							alert("ankit");
+							$window.location.href = '/showshelter';
+							}
+								
+			          });  
 			};
 			
 			

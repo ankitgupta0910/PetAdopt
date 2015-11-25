@@ -174,3 +174,22 @@ exports.shmorepetdet = function(req, res){
 		
 	},myquery);
 };
+
+exports.decide = function(req, res){
+	console.log("decision");
+	var dec = req.param("dec");
+	var pid = req.param("pid");
+	var adml = req.param("adml");
+	var myquery = "Update Pet set p_status = 'false',ad_emailid = '"+adml+"' where p_id = "+pid+"";
+	mysql.fetchData(function(err,results){
+		if(err)
+			{
+				throw err;
+			}
+		else
+			{
+				res.send({"status":200});
+			}
+		
+	},myquery);
+};

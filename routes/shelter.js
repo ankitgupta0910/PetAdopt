@@ -18,6 +18,7 @@ exports.sendmail = function(req, res){
 	var tim = req.param("time");
 	var adfnm1 = req.param("adfnm");
 	var admld1 = req.param("admld");
+	var pid = req.param("pid");
 	var shmld1 = '<'+req.param("shmld")+'>';
 	var re = admld1+","+req.param("shmld");
 	
@@ -28,7 +29,7 @@ exports.sendmail = function(req, res){
 //		    from: shmld1,
 //			to: 'ankitgupta09101987@gmail.com', // list of receivers
 		    to: re,
-		    subject: 'Hello', // Subject line
+		    subject: 'Meeting for Pet Adopt!', // Subject line
 		    text: t, // plaintext body
 	//	    html: '<b>Hello world</b>' // html body
 		};
@@ -39,8 +40,21 @@ exports.sendmail = function(req, res){
 		        return console.log(error);
 		    }
 		    console.log('Message sent: ' + info.response);
-		    res.send({"status":200});
+		    res.send({"status":200});    
 		});
+		
+		var myquery = "Update Selection set sl_notified = 'true' where p_id = "+pid+" and ad_emailid = '"+admld1+"'";
+		mysql.fetchData(function(err,results){
+			if(err)
+				{
+					throw err;
+				}
+			else
+				{
+				res.send({"status":200});
+				}
+			
+		},myquery);
 		
 };
 
@@ -90,6 +104,10 @@ exports.sh_signup = function(req, res){
 					var JSONstr1=JSON.stringify(results1);
 					l1=results1.length;
 					res.send({"status1":200,"result1":JSONstr1,"l1":results1.length});
+					}
+				else
+					{
+					res.send({"status1":205});
 					}
 				}
 		},myquery1);

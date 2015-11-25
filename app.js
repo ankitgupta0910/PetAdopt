@@ -59,6 +59,7 @@ app.get('/petdetails', pet.petdetails);
 app.post('/morepetdet', pet.morepetdet);
 app.post('/putinterest',pet.putinterest);
 app.post('/shmorepetdet', pet.shmorepetdet);
+app.post('/decide', pet.decide);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
