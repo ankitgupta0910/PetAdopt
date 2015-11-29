@@ -23,7 +23,7 @@ app.use(express.session({secret:'Hello World',duration:30*60*1000}));
 
 
 // all environments
-app.set('port', process.env.PORT || 3002);
+app.set('port', process.env.PORT || 3000);
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 app.use(express.favicon());

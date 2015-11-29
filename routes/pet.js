@@ -27,7 +27,7 @@ exports.petinsert = function(req,res){
 	if(req.files.pt_file.size != 0)
 		{
 	    var tmp_path = req.files.pt_file.path;
-	    var target_path = '/Users/ankitgupta/Documents/workspace/PetAdopt/public/images/' + Date.now() + req.files.pt_file.name;
+	    var target_path = '/Users/manjeetsingh/git/PetAdopt/public/images/' + Date.now() + req.files.pt_file.name;
 	    var profile_pic = Date.now() + req.files.pt_file.name;
 	    fs.rename(tmp_path, target_path, function(err) {
 	        if (err) throw err;
@@ -52,8 +52,10 @@ exports.petinsert = function(req,res){
 	var breed = req.param("pt_breed");
     var gender= req.param("pt_gender");
     var shmail = req.param("sh_pt_email");
-    var myquery = "insert into Pet (p_name,p_type,p_color,p_height,p_weight,p_breed,p_status,ad_emailid,sh_emailid,p_image_name,p_gender) values " +
-    		"  ('"+name+"','"+type+"','"+color+"','"+height+"','"+weight+"','"+breed+"','true',NULL,'"+shmail+"','"+profile_pic+"','"+gender+"')";
+    var desc = req.param("pt_desc");
+    
+    var myquery = "insert into Pet (p_name,p_type,p_color,p_height,p_weight,p_breed,p_status,ad_emailid,sh_emailid,p_image_name,p_gender,p_description) values " +
+    		"  ('"+name+"','"+type+"','"+color+"','"+height+"','"+weight+"','"+breed+"','true',NULL,'"+shmail+"','"+profile_pic+"','"+gender+"','"+desc+"')";
 	mysql.fetchData(function(err,results){
 		if(err)
 			{

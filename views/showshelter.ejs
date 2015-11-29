@@ -414,7 +414,7 @@ padding: 0 0 0 0;
 					    <div id="mycarousel" class="carousel slide" data-ride="carousel">
     						<div class="carousel-inner">
         						<div class="item active">
-              						<img width="156px" height="70px" src="/images/{{id1.p_image_name}}" style="margin: 0 0 0 28px"/>
+              						<img class="img-rounded" style="height:180px;width:180px;margin: 0 0 0 17px" src="/images/{{id1.p_image_name}}"/>
            							<div style="color:black;font-size: 31px;" class="carousel-caption" ng-hide={{id1.p_status}}>
            							Adopted!
            							</div>
@@ -438,7 +438,7 @@ padding: 0 0 0 0;
 					    <div id="mycarousel" class="carousel slide" data-ride="carousel">
     						<div class="carousel-inner">
         						<div class="item active"> 
-              						<a role="button"  ng-model="selected" href="" ng-click="moredet(id1)"><img width="156px" height="70px" src="/images/{{id1.p_image_name}}"/>
+              						<a role="button"  ng-model="selected" href="" ng-click="moredet(id1)"><img class="img-rounded" style="height:180px;width:180px;" src="/images/{{id1.p_image_name}}"/>
               							<div style="color:red;font-size: 15px;" class="carousel-caption" ng-show={{id1.sl_notified}}>
            									Meeting Scheduled!
            								</div>
@@ -616,7 +616,7 @@ padding: 0 0 0 0;
 		           	</div>
         
                    <div class="form-group">				
-		 				<input type="text" name="pt_breed" ng-model="pt_breed" maxlength="10" placeholder="Pet Breed" class="login-text" ng-change="petdisabled()" required><br>
+		 				<input type="text" name="pt_breed" ng-model="pt_breed" maxlength="30" placeholder="Pet Breed" class="login-text" ng-change="petdisabled()" required><br>
 						<span style="color:red" ng-show="pet_form.pt_breed.$dirty && pet_form.pt_breed.$invalid">
 						<span ng-show="pet_form.pt_breed.$error.required">
 						<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
@@ -639,6 +639,10 @@ padding: 0 0 0 0;
 						</span>
 		           	</div>
 
+		           	<div class="form-group">			
+		           	<textarea ng-model="pt_desc" name="pt_desc" class="login-text" placeholder="Pet Description"></textarea>	
+		           	</div>
+		           	
 					
 					<input type="text" name="sh_pt_email" value={{sh_ret_email}} ng-hide="true">
 					<input type="file" file-model="pt_file" name="pt_file" style="margin:0 0 0 -15px;">

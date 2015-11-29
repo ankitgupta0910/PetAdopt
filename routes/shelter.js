@@ -6,8 +6,8 @@ var nodemailer = require('nodemailer');
 var transporter = nodemailer.createTransport({
     service: 'Yahoo',
     auth: {
-        user: 'ankitgupta_0910@yahoo.com',
-        pass: 'tush 0910 tush'
+        user: 'venturenet11@yahoo.com',
+        pass: 'venture11'
     }
 });
 
@@ -25,9 +25,7 @@ exports.sendmail = function(req, res){
 	var t = 'Hi '+adfnm1+','+"\r\n\r\n"+'Please meet us at San Jose for further proceedings.'+"\r\n"+'Date: '+dat+"\r\n"+'Time: '+tim+"\r\n\r\n"+'Thanks & Regards'+"\r\n"+'Pet Adopt'
 	console.log(t);
 		var mailOptions = {
-		    from: '<ankitgupta_0910@yahoo.com>', // sender address
-//		    from: shmld1,
-//			to: 'ankitgupta09101987@gmail.com', // list of receivers
+		    from: '<venturenet11@yahoo.com>', // sender address
 		    to: re,
 		    subject: 'Meeting for Pet Adopt!', // Subject line
 		    text: t, // plaintext body
