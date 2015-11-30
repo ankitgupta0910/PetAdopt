@@ -800,7 +800,6 @@ padding: 0 0 0 0;
 		
 		app.controller('PetAdopt', ['$scope','$http','$window',function ($scope,$http,$window) 
 	{
-			//alert("ankit");
 			$scope.mainsub = true;
 			$scope.adupsub = true;
 			$scope.shupsub = true;
@@ -960,7 +959,6 @@ padding: 0 0 0 0;
 					{
 					if($scope.mainrd === true)
 						{
-						//alert
 						$scope.mainsub = false;
 						}
 					}
@@ -1184,7 +1182,7 @@ $scope.interest = function (id1){
 
 $scope.logout = function (){
 	
-	alert("ankit");
+	
 	$http({
   	  		method: 'POST',
   	 		url: '/logout',

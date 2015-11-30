@@ -791,7 +791,6 @@ var app = angular.module('PetAdopt', []);
 			
 			$scope.logout = function (){
 				
-			//	alert("ankit");
 				$http({
 		      	  		method: 'POST',
 		      	 		url: '/logout',
@@ -889,7 +888,6 @@ var app = angular.module('PetAdopt', []);
 			          then(function(response) {
 			        	  if (response.data.status == 200)
 							{
-							alert("ankit");
 							$window.location.href = '/showshelter';
 							}
 								
