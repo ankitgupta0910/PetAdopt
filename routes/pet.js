@@ -139,7 +139,7 @@ exports.morepetdet = function(req, res){
 exports.putinterest = function(req, res){
 	var idput = req.param("id2");
 	var ademail2intrt = req.param("ademail2intrt");
-    var myquery = "insert into selection values("+idput+",'"+ademail2intrt+"','N')";
+    var myquery = "insert into Selection values("+idput+",'"+ademail2intrt+"','N')";
 	mysql.fetchData(function(err,results){
 		if(err)
 			{
